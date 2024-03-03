@@ -16,12 +16,11 @@ The goal of this project is to understand the underlying foliation, infinitesima
 1. Reading course about several articles by Kawauch Akio mentored by Igor Mineyev (Jan 2024- Present)
 The goal is try to understand the proof of several long-standing open problems in topology/geometric group theory solved by Kawauchi Akio, and try to find mistakes, if any.
 1. Reseach about Linear Poisson structures in dimension 4 mentored by Florian Zeiser. (Aug 2023- Dec 2023)
+The goal of this project is to understand, on a formal level, the underlying foliation, infinitesimal automorphisms and deformations by means of the associated cohomology groups, i.e. formal Poisson cohomology, for some of the linear Poisson brackets.
 
-
-
-Getting started
+Courses
 ======
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
+1. Undergraduate course:
 1. Fork [this repository](https://github.com/academicpages/academicpages.github.io) by clicking the "fork" button in the top right. 
 1. Go to the repository's settings (rightmost item in the tabs that start with "Code", should be below "Unwatch"). Rename the repository "[your GitHub username].github.io", which will also be your website's URL.
 1. Set site-wide configuration and create content & metadata (see below -- also see [this set of diffs](http://archive.is/3TPas) showing what files were changed to set up [an example site](https://getorg-testacct.github.io) for a user with the username "getorg-testacct")
