@@ -10,7 +10,7 @@ redirect_from:
 I am a Juninor student of University of Illinois Urbana-Champaign maijoring in Mathematics, my research interests generally about Geometry, Topology and Alegbraic Geometry. I am good at dealing with mathematical topics that combine Geometry with Algebra.
 
 Research Experience
-
+======
 1. Research about Poisson structures and their cohomology mentored by Florian Zeiser. (Jan 2024- Present)
 
 The goal of this project is to understand the underlying foliation, infinitesimal automorphisms and deformations by means of the associated cohomology groups, i.e. Poisson cohomology, for some of the linear Poisson brackets.
