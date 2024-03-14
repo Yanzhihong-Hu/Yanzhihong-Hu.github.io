@@ -21,7 +21,7 @@ repository               : "Yanzhihong-Hu/Yanzhihong-Hu.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "Profile.jpg"
   name             : "Yanzhihong Hu"
   pronouns         : “he/his"  
   bio              : "Geometry and Topology, Algebraic Geometry"
