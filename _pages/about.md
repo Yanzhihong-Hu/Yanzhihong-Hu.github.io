@@ -52,7 +52,7 @@ before focusing on integral affine manifolds and their special properties. And w
 also investigated such manifolds in dimension 3.
 1. Research project about Poisson structures and their cohomology mentored by Florian
 Zeiser.
-Jan 2024- May 2024 \
+(Jan 2024- May 2024) \
 • In this project we understand the underlying foliation, infinitesimal automorphisms
 and deformations by means of the associated cohomology groups, i.e. Poisson
 cohomology, for some of the linear Poisson brackets.
