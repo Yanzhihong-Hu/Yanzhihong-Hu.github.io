@@ -7,13 +7,13 @@ redirect_from:
   - /about.html
 ---
 
-I am a Senior student of University of Illinois Urbana-Champaign maijoring in Mathe-
-matics, my research interests focus on low-dimensional topology and geometric group
-theory. I am good at dealing with mathematical topics that combine Geometry with Algebra
+I am a first-year PhD student in Mathematics at the Georgia Institute of Technology. My previous research focused on low-dimensional topology and geometric group theory. Currently, my main research interest lies in deep learning theory.
 
 Education
 ======
-Bachelor of Science in Mathematics, University of Illinois Urbana-Champaign
+
+- **PhD in Mathematics**, Georgia Institute of Technology, Atlanta, GA *(2025 – Present)*  
+- **Bachelor of Science in Mathematics**, University of Illinois Urbana-Champaign, Urbana, IL *(2023 – 2025)*  
 
 
 Research Experience
