@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-Hi! I am Yanzhihong Hu, a first-year Ph.D. student in Mathematics at the Georgia Institute of Technology and a member of the [LUNAR Lab](https://sites.gatech.edu/lunarlab/) work on robotics with [Prof. Lu Gan](https://ganlumomo.github.io/).
+Hi! I am Yanzhihong Hu, a first-year Ph.D. student in Mathematics at the Georgia Institute of Technology and a member of the [Lunar Lab](https://sites.gatech.edu/lunarlab/) work on robotics with [Prof. Lu Gan](https://ganlumomo.github.io/).
 
 My background is in pure mathematics, especially topology, geometric group theory, and related areas. I am currently interested in machine learning, optimization, and robotics, with a particular focus in robot learning, motion generation, and constrained optimization.
 
