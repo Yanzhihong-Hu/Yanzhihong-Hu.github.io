@@ -8,10 +8,10 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Yanzhihong's Page"
+title                    : "Yanzhihong Hu"
 title_separator          : "-"
 name                     : &name "Yanzhihong Hu"
-description              : &description "personal description"
+description              : &description "Yanzhihong Hu is a Mathematics Ph.D. student at Georgia Tech interested in probability, random matrices, and random geometry."
 url                      : https://Yanzhihong-Hu.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "Yanzhihong-Hu/Yanzhihong-Hu.github.io"
@@ -23,8 +23,8 @@ author:
   # Biographic information
   avatar           : "Profile.jpg"
   name             : "Yanzhihong Hu"
-  pronouns         : “he/his"  
-  bio              : "Machine Learning and Robotics"
+  pronouns         : "he/him"
+  bio              : "Mathematics Ph.D. student interested in probability, random matrices, and random geometry"
   location         : "Atlanta, GA, USA"
   employer         : "Georgia Tech School of Mathematics"
   uri              : "https://math.gatech.edu/"
@@ -77,7 +77,7 @@ author:
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
-future                   : true
+future                   : false
 read_more                : "disabled" # if enabled, adds "Read more" links to excerpts
 talkmap_link             : false #change to true to add link to talkmap on talks page
 comments:
@@ -124,18 +124,21 @@ facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 :  # Open Graph/Twitter default site image
+og_image                 : "Profile.jpg"
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
-  type                   : # Person or Organization (defaults to Person)
-  name                   : # If the user or organization name differs from the site's name
-  links: # An array of links to social media profiles
+  type                   : Person
+  name                   : "Yanzhihong Hu"
+  links:
+    - "https://github.com/Yanzhihong-Hu"
+    - "https://www.linkedin.com/in/YanzhihongHu"
+    - "https://www.zhihu.com/people/leslie-hu-11"
 
 
 # Analytics
 analytics:
-  provider               :  "google-universal" # false (default), "google", "google-universal", "google-analytics-4", "custom"
+  provider               : false # false (default), "google", "google-universal", "google-analytics-4", "custom"
   google:
     tracking_id          :
 
@@ -154,21 +157,44 @@ exclude:
   - .sass-cache
   - CHANGELOG
   - Capfile
+  - CONTRIBUTING.md
   - Gemfile
+  - Gemfile.lock
   - Gruntfile.js
   - LICENSE
   - README
+  - README.md
   - Rakefile
   - assets/js/_main.js
+  - assets/js/main.min.js
+  - assets/js/collapse.js
   - assets/js/plugins
   - assets/js/vendor
+  - assets/css/academicons.css
+  - assets/css/academicons.min.css
+  - assets/css/collapse.css
+  - assets/fonts
+  - assets/webfonts
   - config
   - gulpfile.js
   - log
   - node_modules
   - package.json
+  - package-lock.json
+  - markdown_generator
+  - talkmap
+  - talkmap.ipynb
+  - talkmap.py
+  - files/paper1.pdf
+  - files/paper2.pdf
+  - files/paper3.pdf
+  - files/CV-Final.pdf
   - tmp
   - vendor
+  - IMG_7079.jpg
+  - IMG_7333.jpg
+  - IMG_7487.jpg
+  - IMG_7561.jpg
 keep_files:
   - .git
   - .svn
@@ -220,53 +246,53 @@ defaults:
       type: posts
     values:
       layout: single
-      author_profile: true
+      author_profile: false
       read_time: true
-      comments: true
-      share: true
-      related: true
+      comments: false
+      share: false
+      related: false
   # _pages
   - scope:
       path: ""
       type: pages
     values:
-      layout: single
-      author_profile: true
+      layout: page
+      author_profile: false
   # _teaching
   - scope:
       path: ""
       type: teaching
     values:
       layout: single
-      author_profile: true
-      share: true
-      comments: true
+      author_profile: false
+      share: false
+      comments: false
   # _publications
   - scope:
       path: ""
       type: publications
     values:
       layout: single
-      author_profile: true
-      share: true
-      comments: true
+      author_profile: false
+      share: false
+      comments: false
   # _portfolio
   - scope:
       path: ""
       type: portfolio
     values:
       layout: single
-      author_profile: true
-      share: true
-      comment: true
+      author_profile: false
+      share: false
+      comment: false
   # _talks
   - scope:
       path: ""
       type: talks
     values:
       layout: talk
-      author_profile: true
-      share: true
+      author_profile: false
+      share: false
 
 
 # Sass/SCSS
@@ -279,7 +305,7 @@ sass:
 permalink: /:categories/:title/
 # paginate: 5 # amount of posts to show
 # paginate_path: /page:num/
-timezone: America/Los_Angeles # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: America/New_York
 
 
 # Plugins

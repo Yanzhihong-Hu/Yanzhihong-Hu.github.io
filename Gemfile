@@ -11,6 +11,11 @@ source "https://rubygems.org"
 
 gem "github-pages", group: :jekyll_plugins
 
+# macOS ships Ruby 2.6 in this development environment; newer precompiled FFI
+# releases require Ruby 3. Pin the last compatible line without changing the
+# GitHub Pages runtime or adding a front-end dependency.
+gem "ffi", "~> 1.15.5"
+
 # If you want to use Jekyll native, uncomment the line below.
 # To upgrade, run `bundle update`.
 

@@ -1,36 +1,43 @@
 ---
-permalink: /
-title: "Hello, I am Yanzhihong Hu"
-author_profile: true
-redirect_from: 
-  - /about/
-  - /about.html
+layout: page
+permalink: /about/
+title: "About"
+eyebrow: "Profile · 01"
+intro: "I am a Mathematics Ph.D. student at the Georgia Institute of Technology, interested in probability, random matrices, and random geometry."
+description: "About Yanzhihong Hu, a Mathematics Ph.D. student at Georgia Tech."
 ---
+<section class="content-grid reveal">
+  <div class="content-grid__label"><p>Overview</p></div>
+  <div class="content-grid__main prose-large">
+    <p>My mathematical background is in topology, geometric group theory, geometry, and algebra. Earlier projects included work on 4-manifolds and Kirby calculus, knot-theoretic questions, integral affine manifolds, and Poisson structures.</p>
+    <p>My current research interests are probability, random matrices, and random geometry. These are directions of study rather than claims of completed research.</p>
+  </div>
+</section>
 
-Hi! I am Yanzhihong Hu, a first-year Ph.D. student in Mathematics at the Georgia Institute of Technology and a member of the [Lunar Lab](https://sites.gatech.edu/lunarlab/) work on robotics with [Prof. Lu Gan](https://ganlumomo.github.io/).
+<section class="content-grid reveal" aria-labelledby="education-title">
+  <div class="content-grid__label"><p>Education</p></div>
+  <div class="content-grid__main">
+    <h2 id="education-title" class="visually-hidden">Education</h2>
+    <div class="record-list">
+      {% for item in site.data.profile.education %}
+        <article class="record-list__item">
+          <p class="record-list__period">{{ item.period }}</p>
+          <div>
+            <h3>{{ item.degree }}</h3>
+            <p>{{ item.institution }}</p>
+            <p class="muted">{{ item.location }}</p>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
 
-My background is in pure mathematics, especially topology, geometric group theory, and related areas. I am currently interested in machine learning, optimization, and robotics, with a particular focus in robot learning, motion generation, and constrained optimization.
-
-
-Education
-======
-
-- **Ph.D. in Mathematics**, Georgia Institute of Technology, Atlanta, GA *(2025–Present)*
-- **B.S. in Mathematics**, University of Illinois Urbana-Champaign, Urbana, IL *(2023–2025)*
-
-Teaching
-======
-
-- **Teaching Assistant**, **MATH 3215: Introduction to Probability and Statistics**, Georgia Institute of Technology *(Fall 2025)*
-- **Teaching Assistant**, **MATH 1553: Introduction to Linear Algebra**, Georgia Institute of Technology *(Spring 2026)*
-
-Previous Research
-======
-
-Before coming to Georgia Tech, I worked on several topics in pure mathematics, including:
-
-- **4-Manifolds and Kirby Calculus**, supervised by **Jake Rasmussen**
-- **Unknotting Conjecture and Whitehead Conjecture**, supervised by **Igor Mineyev**
-- **Polymath REU in Low-Dimensional Topology**, supervised by **Alex Zupan** and **Jeffrey Meier**
-- **Geodesics on Integral Affine Manifolds**, mentored by **Florian Zeiser**
-- **Poisson Structures and Their Cohomology**, mentored by **Florian Zeiser**
+<section class="content-grid reveal" aria-labelledby="approach-title">
+  <div class="content-grid__label"><p>Approach</p></div>
+  <div class="content-grid__main prose-large">
+    <h2 id="approach-title">Research interests change; standards of care should not.</h2>
+    <p>I distinguish on this site between previous projects, present areas of focus, and subjects I am still learning. That distinction matters: curiosity is not the same as a finished result.</p>
+    <p>My earlier mathematical work remains part of this record, while my present direction is centered on probability, random matrices, and random geometry.</p>
+  </div>
+</section>

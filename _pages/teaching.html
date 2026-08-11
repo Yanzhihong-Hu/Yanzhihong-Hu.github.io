@@ -1,12 +1,31 @@
 ---
-layout: archive
+layout: page
 title: "Teaching"
 permalink: /teaching/
-author_profile: true
+eyebrow: "Academic life · 03"
+intro: "Teaching assistantships at Georgia Tech across probability, statistics, and linear algebra."
+description: "Teaching record of Yanzhihong Hu at Georgia Tech."
 ---
+{% assign teaching_sorted = site.teaching | sort: 'date' | reverse %}
+<section class="content-grid reveal">
+  <div class="content-grid__label"><p>Georgia Tech</p></div>
+  <div class="content-grid__main">
+    <div class="teaching-catalogue">
+      {% for course in teaching_sorted %}
+        <article class="teaching-catalogue__item">
+          <p class="teaching-catalogue__term">{% if course.term %}{{ course.term }}{% else %}{{ course.date | date: "%Y" }}{% endif %}</p>
+          <div>
+            <h2><a href="{{ course.url | relative_url }}">{{ course.title }}</a></h2>
+            <p>{{ course.venue }}</p>
+            <p class="muted">{{ course.content | markdownify | strip_html | strip_newlines }}</p>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
 
-{% include base_path %}
-
-{% for post in site.teaching reversed %}
-  {% include archive-single.html %}
-{% endfor %}
+<section class="editorial-note reveal">
+  <p class="eyebrow">Courses</p>
+  <p>MATH 3215 introduces probability and statistics; MATH 1553 introduces linear algebra. Only appointments confirmed by the repository are listed here.</p>
+</section>

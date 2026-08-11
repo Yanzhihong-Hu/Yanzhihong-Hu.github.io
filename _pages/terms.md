@@ -1,6 +1,8 @@
 ---
 permalink: /terms/
 title: "Terms and Privacy Policy"
+sample: true
+published: false
 modified: 2016-06-06
 ---
 

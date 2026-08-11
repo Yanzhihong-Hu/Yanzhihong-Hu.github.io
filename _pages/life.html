@@ -1,0 +1,89 @@
+---
+layout: page
+title: "Life & Listening"
+permalink: /life/
+eyebrow: "Outside mathematics · 05"
+intro: "A small, evolving record of everyday life, pets, and music I return to."
+description: "A personal gallery and listening notes from Yanzhihong Hu."
+---
+<section class="life-gallery reveal" aria-labelledby="life-gallery-title">
+  <div class="section-heading-row">
+    <h2 id="life-gallery-title">A life in frames</h2>
+    <p>Personal photographs, added slowly and kept with intention. Select an image to view it in full.</p>
+  </div>
+
+  {% if site.data.gallery.items and site.data.gallery.items != empty %}
+    <div class="gallery-grid">
+      {% for item in site.data.gallery.items %}
+        <figure class="gallery-item gallery-item--{{ item.orientation | default: 'landscape' }} reveal">
+          <button
+            class="gallery-item__button"
+            type="button"
+            data-gallery-open
+            data-gallery-src="{{ item.image | relative_url }}"
+            data-gallery-alt="{{ item.alt | escape }}"
+            data-gallery-category="{{ item.category | escape }}"
+            data-gallery-caption="{{ item.caption | escape }}"
+            aria-label="View larger: {{ item.caption | escape }}">
+            <span class="gallery-item__image">
+              <img src="{{ item.image | relative_url }}" alt="{{ item.alt | escape }}" loading="lazy">
+            </span>
+            <span class="gallery-item__view" aria-hidden="true">View</span>
+          </button>
+          <figcaption>
+            <span>{{ item.category }}</span>
+            <p>{{ item.caption }}</p>
+          </figcaption>
+        </figure>
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="life-empty">
+      <p>Photographs will be added here as the collection grows.</p>
+    </div>
+  {% endif %}
+</section>
+
+<section class="listening-section reveal" aria-labelledby="listening-title">
+  <div class="section-heading-row">
+    <h2 id="listening-title">On repeat</h2>
+    <p>A personal shelf of tracks and albums worth returning to—recommendations, not rankings.</p>
+  </div>
+
+  {% if site.data.music.selections and site.data.music.selections != empty %}
+    <ol class="music-ledger">
+      {% for selection in site.data.music.selections %}
+        <li>
+          <span class="music-ledger__number">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span>
+          <div class="music-ledger__identity">
+            <h3>{% if selection.url %}<a href="{{ selection.url }}" rel="noopener">{{ selection.title }}</a>{% else %}{{ selection.title }}{% endif %}</h3>
+            <p>{{ selection.artist }}{% if selection.year %} · {{ selection.year }}{% endif %}</p>
+          </div>
+          {% if selection.note %}<p class="music-ledger__note">{{ selection.note }}</p>{% endif %}
+          {% if selection.url %}<a class="music-ledger__listen" href="{{ selection.url }}" rel="noopener" aria-label="Listen to {{ selection.title }} by {{ selection.artist }} on Spotify">Spotify <span aria-hidden="true">↗</span></a>{% endif %}
+        </li>
+      {% endfor %}
+    </ol>
+  {% else %}
+    <div class="life-empty life-empty--music">
+      <p class="eyebrow">Listening notes</p>
+      <h3>The first selections are still being chosen.</h3>
+      <p>This shelf will begin with music I can recommend personally.</p>
+    </div>
+  {% endif %}
+</section>
+
+<dialog class="gallery-lightbox" data-gallery-dialog aria-labelledby="gallery-dialog-caption">
+  <button class="gallery-lightbox__close" type="button" data-gallery-close aria-label="Close image viewer">
+    <span aria-hidden="true">Close ×</span>
+  </button>
+  <figure>
+    <div class="gallery-lightbox__image-wrap">
+      <img data-gallery-dialog-image alt="">
+    </div>
+    <figcaption id="gallery-dialog-caption">
+      <span data-gallery-dialog-category></span>
+      <p data-gallery-dialog-caption></p>
+    </figcaption>
+  </figure>
+</dialog>

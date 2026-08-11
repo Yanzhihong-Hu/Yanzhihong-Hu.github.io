@@ -1,0 +1,23 @@
+# Add personal photographs to /images/gallery/ and append entries here.
+# Supported orientation values: portrait, landscape, square.
+items:
+  - image: "/images/gallery/pet-field-01.webp"
+    alt: "Black dog lying on grass with a baseball between its paws"
+    category: "Companion"
+    caption: "A pause after play."
+    orientation: "landscape"
+  - image: "/images/gallery/pet-field-02.webp"
+    alt: "Black dog resting in the shade on a grassy field"
+    category: "Companion"
+    caption: "Resting in the shade."
+    orientation: "portrait"
+  - image: "/images/gallery/pet-field-03.webp"
+    alt: "Black dog lying in the grass and looking to the side"
+    category: "Companion"
+    caption: "Watching the field."
+    orientation: "landscape"
+  - image: "/images/gallery/pet-field-04.webp"
+    alt: "Black dog sitting behind an orange ball on the grass"
+    category: "Companion"
+    caption: "Ready for another throw."
+    orientation: "portrait"

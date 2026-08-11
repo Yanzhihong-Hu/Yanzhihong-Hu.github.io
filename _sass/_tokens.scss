@@ -1,0 +1,32 @@
+:root {
+  --color-paper: #f3ede2;
+  --color-paper-deep: #e9dfd0;
+  --color-ink: #202927;
+  --color-ink-soft: #46514e;
+  --color-muted: #68736f;
+  --color-line: rgba(32, 41, 39, 0.19);
+  --color-line-strong: rgba(32, 41, 39, 0.38);
+  --color-accent: #2d746e;
+  --color-accent-dark: #17524e;
+  --color-accent-soft: #a2c3bb;
+  --color-light: #fbf8f2;
+  --font-display: "Iowan Old Style", "Baskerville", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --font-body: "Avenir Next", Avenir, "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --container: 1180px;
+  --container-wide: 1380px;
+  --gutter: clamp(1.25rem, 4vw, 4.5rem);
+  --space-1: 0.5rem;
+  --space-2: 0.75rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
+  --space-6: 3rem;
+  --space-7: 4.5rem;
+  --space-8: 7rem;
+  --space-9: 10rem;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 180ms;
+  --duration: 420ms;
+  --header-height: 5.25rem;
+}

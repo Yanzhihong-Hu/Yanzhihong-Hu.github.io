@@ -1,23 +1,26 @@
 {% include base_path %}
+<header class="site-header" data-site-header>
+  <div class="site-header__inner container-wide">
+    <a class="site-brand" href="{{ base_path }}/" aria-label="Yanzhihong Hu — Home">
+      <span class="site-brand__mark" aria-hidden="true">YH</span>
+      <span class="site-brand__name">Yanzhihong Hu</span>
+    </a>
 
-<div class="masthead">
-  <div class="masthead__inner-wrap">
-    <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav">
-        <button><div class="navicon"></div></button>
-        <ul class="visible-links">
-          <li class="masthead__menu-item masthead__menu-item--lg"><a href="{{ base_path }}/">{{ site.title }}</a></li>
-          {% for link in site.data.navigation.main %}
-            {% if link.url contains 'http' %}
-              {% assign domain = '' %}
-              {% else %}
-              {% assign domain = base_path %}
-            {% endif %}
-            <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
-          {% endfor %}
-        </ul>
-        <ul class="hidden-links hidden"></ul>
-      </nav>
-    </div>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-navigation">
+      <span class="nav-toggle__label">Menu</span>
+      <span class="nav-toggle__lines" aria-hidden="true"><span></span><span></span></span>
+    </button>
+
+    <nav class="site-nav" id="site-navigation" aria-label="Primary navigation">
+      <ul>
+        {% for link in site.data.navigation.main %}
+          {% assign active = false %}
+          {% if page.url contains link.url %}{% assign active = true %}{% endif %}
+          <li>
+            <a href="{{ base_path }}{{ link.url }}"{% if active %} class="is-active" aria-current="page"{% endif %}>{{ link.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
   </div>
-</div>
+</header>

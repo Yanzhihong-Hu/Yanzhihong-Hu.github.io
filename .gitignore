@@ -1,5 +1,13 @@
 # Ignore the contents of the _site directory
 _site/
+/.bundle/
+/vendor/
+
+# Local high-resolution gallery sources; the site uses optimized derivatives.
+/IMG_7079.jpg
+/IMG_7333.jpg
+/IMG_7487.jpg
+/IMG_7561.jpg
 
 # Ignore the Gemfile that is generated
 Gemfile.lock

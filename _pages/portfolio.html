@@ -1,14 +1,28 @@
 ---
-layout: archive
-title: "Portfolio"
-permalink: /portfolio/
-author_profile: true
+layout: page
+title: "Previous Work"
+permalink: /previous-work/
+redirect_from:
+  - /portfolio/
+eyebrow: "Archive · 04"
+intro: "Earlier mathematical projects, retained with their original context."
+description: "Previous mathematical work by Yanzhihong Hu."
 ---
-
-{% include base_path %}
-
-
-{% for post in site.portfolio %}
-  {% include archive-single.html %}
-{% endfor %}
-
+<section class="content-grid reveal" aria-labelledby="math-work-title">
+  <div class="content-grid__label"><p>Mathematics</p></div>
+  <div class="content-grid__main">
+    <h2 id="math-work-title" class="visually-hidden">Earlier mathematical projects</h2>
+    <div class="project-catalogue">
+      {% for item in site.data.profile.previous_mathematics %}
+        <article class="project-catalogue__item">
+          <p class="project-catalogue__number">0{{ forloop.index }}</p>
+          <div>
+            <h3>{{ item.title }}</h3>
+            <p class="project-catalogue__context">{{ item.context }}</p>
+            <p>{{ item.description }}</p>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

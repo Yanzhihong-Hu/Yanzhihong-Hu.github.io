@@ -1,0 +1,47 @@
+education:
+  - degree: "Ph.D. in Mathematics"
+    institution: "Georgia Institute of Technology"
+    location: "Atlanta, Georgia"
+    period: "2025–Present"
+  - degree: "B.S. in Mathematics"
+    institution: "University of Illinois Urbana-Champaign"
+    location: "Urbana, Illinois"
+    period: "2023–2025"
+
+research:
+  current:
+    - title: "Probability"
+      note: "Research interest"
+      description: "The central language and foundation of my current mathematical study."
+    - title: "Random matrices"
+      note: "Research interest"
+      description: "An active area of interest within my current study of probability and random structures."
+    - title: "Random geometry"
+      note: "Research interest"
+      description: "A developing interest in geometric objects and phenomena shaped by randomness."
+
+previous_mathematics:
+  - title: "4-Manifolds and Kirby Calculus"
+    context: "Reading course"
+    description: "Study of handle decompositions, Heegaard splittings, and Kirby diagrams."
+  - title: "Unknotting Conjecture and Whitehead Conjecture"
+    context: "Research project"
+    description: "A project examining arguments around longstanding questions in topology and geometric group theory."
+  - title: "Polymath REU in Low-Dimensional Topology"
+    context: "Research experience for undergraduates"
+    description: "Work on ribbon knots, ribbon number, and connections with knot invariants."
+  - title: "Geodesics on Integral Affine Manifolds"
+    context: "Research project"
+    description: "Study of geodesics associated with connections on integral affine manifolds."
+  - title: "Poisson Structures and Their Cohomology"
+    context: "Research project"
+    description: "Study of foliations, infinitesimal automorphisms, and deformations through Poisson cohomology."
+
+contact:
+  email: "yhu734@gatech.edu"
+  location: "Atlanta, Georgia"
+  institution: "Georgia Tech School of Mathematics"
+  institution_url: "https://math.gatech.edu/"
+  github: "https://github.com/Yanzhihong-Hu"
+  linkedin: "https://www.linkedin.com/in/YanzhihongHu"
+  zhihu: "https://www.zhihu.com/people/leslie-hu-11"

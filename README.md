@@ -1,41 +1,43 @@
+# Yanzhihong Hu — Academic Website
 
-# Academic Pages
+Personal academic website for Yanzhihong Hu, built with Jekyll and deployed through GitHub Pages.
 
-![pages-build-deployment](https://github.com/academicpages/academicpages.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)
+## Structure
 
-Academic Pages is a Github Pages template for academic websites.
+- `index.html` — editorial home page
+- `_pages/` — About, Research, Teaching, Previous Work, Life, CV, Contact, and Publications
+- `_data/profile.yml` — shared factual content used across pages
+- `_data/gallery.yml` and `_data/music.yml` — editable personal gallery and listening selections
+- `_data/navigation.yml` — primary navigation
+- `_layouts/` and `_includes/` — reusable document shell, header, footer, and SEO
+- `_sass/_tokens.scss` — design tokens
+- `_sass/_site.scss` — responsive component and page styles
+- `assets/js/site.js` — mobile navigation, reduced-motion-aware reveals, and the accessible gallery viewer
+- `_teaching/` — teaching collection
+- `files/` and `images/` — preserved documents and media
 
+The sample posts, talks, portfolio items, and publication entries inherited from Academic Pages remain in the repository for reference, but are marked `published: false` and are not presented as personal work.
 
-# Getting Started
+## Local development
 
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Click the "Use this template" button in the top right.
-1. On the "New repository" page, enter your repository name as "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and add your content.
-1. Upload any files (like PDFs, .zip files, etc.) to the `files/` directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.  
-1. Check status by going to the repository settings, in the "GitHub pages" section
-1. (Optional) Use the Jupyter notebooks or python scripts in the `markdown_generator` folder to generate markdown files for publications and talks from a TSV file.
+Install dependencies:
 
-See more info at https://academicpages.github.io/
+```sh
+bundle install --path vendor/bundle
+```
 
-## Running Locally
+Start the local preview:
 
-When you are initially working your website, it is very useful to be able to preview the changes locally before pushing them to GitHub. To work locally you will need to:
+```sh
+bundle exec jekyll serve --config _config.yml,_config.dev.yml --host 127.0.0.1 --port 4000
+```
 
-1. Clone the repository and made updates as detailed above.
-1. Make sure you have ruby-dev, bundler, and nodejs installed: `sudo apt install ruby-dev ruby-bundler nodejs`
-1. Run `bundle install` to install ruby dependencies. If you get errors, delete Gemfile.lock and try again.
-1. Run `jekyll serve -l -H localhost` to generate the HTML and serve it from `localhost:4000` the local server will automatically rebuild and refresh the pages on change.
+Open <http://127.0.0.1:4000/>.
 
+Build with the same GitHub Pages dependency set:
 
-# Maintenance 
+```sh
+bundle exec jekyll build
+```
 
-Bug reports and feature requests to the template  should be [submitted via GitHub](https://github.com/academicpages/academicpages.github.io/issues/new/choose). For questions concerning how to style the template, please feel free to start a [new discussion on GitHub](https://github.com/academicpages/academicpages.github.io/discussions).
-
-This repository was forked (then detached) by [Stuart Geiger](https://github.com/staeiou) from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/), which is © 2016 Michael Rose and released under the MIT License (see LICENSE.md). It is currently being maintained by [Robert Zupko](https://github.com/rjzupkoii) and additional maintainers would be welcomed.
-
-## Bugfixes and enhancements
-
-If you have bugfixes and enhancements that you would like to submit as a pull request, you will need to [fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) this repository as opposed to using it as a template. This will also allow you to [synchronize your copy](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) of template to your fork as well.
-
-Unfortunately, one logistical issue with a template theme like Academic Pages that makes it a little tricky to get bug fixes and updates to the core theme. If you use this template and customize it, you will probably get merge conflicts if you attempt to synchronize. If you want to save your various .yml configuration files and markdown files, you can delete the repository and fork it again. Or you can manually patch.
+No separate JavaScript build step or npm dependency is required for the redesigned site.
