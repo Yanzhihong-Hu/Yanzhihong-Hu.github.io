@@ -11,6 +11,6 @@ description: "Main pages on Yanzhihong Hu's academic website."
     {% for link in site.data.navigation.main %}
       <li><span>0{{ forloop.index | plus: 1 }}</span><h3><a href="{{ link.url | relative_url }}">{{ link.title }}</a></h3></li>
     {% endfor %}
-    <li><span>09</span><h3><a href="{{ '/publications/' | relative_url }}">Publications</a></h3></li>
+    <li><span>07</span><h3><a href="{{ '/publications/' | relative_url }}">Publications</a></h3></li>
   </ul>
 </nav>
