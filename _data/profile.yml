@@ -13,12 +13,12 @@ research:
     - title: "Probability"
       note: "Research interest"
       description: "The central language and foundation of my current mathematical study."
-    - title: "Random matrices"
-      note: "Research interest"
-      description: "An active area of interest within my current study of probability and random structures."
     - title: "Random geometry"
       note: "Research interest"
       description: "A developing interest in geometric objects and phenomena shaped by randomness."
+    - title: "Mathematical physics"
+      note: "Research interest"
+      description: "A developing area of interest in my current mathematical study."
 
 previous_mathematics:
   - title: "4-Manifolds and Kirby Calculus"

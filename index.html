@@ -1,7 +1,7 @@
 ---
 layout: home
-title: "Probability & Random Structures"
-description: "Yanzhihong Hu is a Mathematics Ph.D. student at Georgia Tech interested in probability, random matrices, and random geometry."
+title: "Probability & Mathematical Physics"
+description: "Yanzhihong Hu is a Mathematics Ph.D. student at Georgia Tech interested in probability, random geometry, and mathematical physics."
 permalink: /
 ---
 {% include base_path %}
@@ -11,7 +11,6 @@ permalink: /
       <p class="eyebrow">Probability · Random structures</p>
       <h1 id="home-title"><span>Yanzhihong</span> <span>Hu</span></h1>
       <p class="home-hero__role">Mathematics Ph.D. Student<br>Georgia Institute of Technology</p>
-      <p class="home-hero__statement">My current research interests are probability, random matrices, and random geometry.</p>
       <div class="action-row">
         <a class="button button--primary" href="{{ base_path }}/research/">Research</a>
         <a class="button button--quiet" href="{{ base_path }}/cv/">View CV <span aria-hidden="true">↗</span></a>
@@ -26,35 +25,30 @@ permalink: /
     <p class="home-hero__index" aria-hidden="true">01</p>
   </section>
 
-  <section class="editorial-section container reveal" aria-labelledby="home-about-title">
-    <div class="section-label"><span>01</span><p>Profile</p></div>
+  <section class="editorial-section container reveal" aria-labelledby="home-research-title">
+    <div class="section-label"><span>01</span><p>Research</p></div>
     <div class="editorial-section__body editorial-section__body--lead">
-      <h2 id="home-about-title">A mathematician studying probability and random structures.</h2>
-      <div class="two-column-copy">
-        <p>I am a Mathematics Ph.D. student at Georgia Tech. My earlier work grew from topology, geometry, and algebra; my present interests are probability, random matrices, and random geometry.</p>
-        <p>I value careful definitions, structural arguments, and the patience required to understand a subject before claiming a result.</p>
-      </div>
-      <a class="text-link" href="{{ base_path }}/about/">About and education <span aria-hidden="true">→</span></a>
+      <h2 id="home-research-title">I am interested in probability, random geometry, and mathematical physics.</h2>
+      <a class="text-link" href="{{ base_path }}/research/">Research context <span aria-hidden="true">→</span></a>
     </div>
   </section>
 
-  <section class="editorial-section container reveal" aria-labelledby="home-research-title">
-    <div class="section-label"><span>02</span><p>Research</p></div>
-    <div class="editorial-section__body">
-      <div class="section-heading-row">
-        <h2 id="home-research-title">Present interests</h2>
-        <p>Areas that currently organize my study—not a claim of completed work.</p>
-      </div>
-      <ol class="interest-index">
-        {% for item in site.data.profile.research.current %}
-          <li>
-            <span class="interest-index__number">0{{ forloop.index }}</span>
-            <h3>{{ item.title }}</h3>
-            <p>{{ item.note }}</p>
-          </li>
+  <section class="editorial-section container reveal" aria-labelledby="home-about-title">
+    <div class="section-label"><span>02</span><p>About &amp; Education</p></div>
+    <div class="editorial-section__body editorial-section__body--lead">
+      <h2 id="home-about-title">I am currently pursuing a Ph.D. in Mathematics at Georgia Tech.</h2>
+      <div class="record-list home-education">
+        {% for item in site.data.profile.education %}
+          <article class="record-list__item">
+            <p class="record-list__period">{{ item.period }}</p>
+            <div>
+              <h3>{{ item.degree }}</h3>
+              <p>{{ item.institution }}</p>
+              <p class="muted">{{ item.location }}</p>
+            </div>
+          </article>
         {% endfor %}
-      </ol>
-      <a class="text-link" href="{{ base_path }}/research/">Research context <span aria-hidden="true">→</span></a>
+      </div>
     </div>
   </section>
 

@@ -3,7 +3,7 @@ layout: page
 permalink: /research/
 title: "Research"
 eyebrow: "Questions · 02"
-intro: "My present interests center on probability, random matrices, and random geometry. I list them as directions of study, not as claims of completed results."
+intro: "My present interests are probability, random geometry, and mathematical physics. I list them as directions of study, not as claims of completed results."
 description: "Research interests and earlier mathematical work of Yanzhihong Hu."
 ---
 <section class="research-status reveal" aria-labelledby="current-direction-title">
