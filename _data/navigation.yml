@@ -9,3 +9,5 @@ main:
     url: /cv/
   - title: "Contact"
     url: /contact/
+  - title: "Publications"
+    url: /publications/

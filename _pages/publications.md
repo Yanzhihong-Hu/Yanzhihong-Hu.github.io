@@ -3,7 +3,6 @@ layout: page
 title: "Publications"
 permalink: /publications/
 eyebrow: "Bibliography"
-intro: "A reserved space for verified publications and preprints."
 description: "Publications and preprints by Yanzhihong Hu."
 ---
 {% assign verified_publications = site.publications | where_exp: "item", "item.sample != true" | sort: "date" | reverse %}
@@ -29,10 +28,4 @@ description: "Publications and preprints by Yanzhihong Hu."
       </article>
     {% endfor %}
   </div>
-{% else %}
-  <section class="empty-state reveal">
-    <p class="eyebrow">At present</p>
-    <h2>No verified publications are listed.</h2>
-    <p>This page is reserved for future verified publications and preprints.</p>
-  </section>
 {% endif %}
