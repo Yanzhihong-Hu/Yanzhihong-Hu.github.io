@@ -436,22 +436,22 @@ main:focus {
 }
 
 .portrait-frame {
-  background: var(--color-paper-deep);
-  height: clamp(24rem, 44vw, 35rem);
-  overflow: hidden;
+  background: transparent;
+  height: auto;
+  overflow: visible;
 }
 
 .portrait-frame img {
-  filter: saturate(0.68) sepia(0.08) contrast(0.96);
-  height: 100%;
-  object-fit: cover;
-  object-position: 51% 24%;
-  transition: filter var(--duration) ease, transform 900ms var(--ease-out);
+  filter: none;
+  height: auto;
+  mask-image: radial-gradient(ellipse 88% 86% at 50% 45%, #000 68%, rgba(0, 0, 0, 0.94) 78%, transparent 100%);
+  object-fit: contain;
+  transition: transform 900ms var(--ease-out);
+  -webkit-mask-image: radial-gradient(ellipse 88% 86% at 50% 45%, #000 68%, rgba(0, 0, 0, 0.94) 78%, transparent 100%);
   width: 100%;
 }
 
 .home-hero__portrait:hover img {
-  filter: saturate(0.82) sepia(0.04) contrast(0.98);
   transform: scale(1.012);
 }
 
@@ -1667,7 +1667,7 @@ body.dialog-open {
     width: 100%;
   }
 
-  .portrait-frame { height: min(112vw, 34rem); }
+  .portrait-frame { height: auto; }
   .home-hero__index { display: none; }
 
   .editorial-section,
