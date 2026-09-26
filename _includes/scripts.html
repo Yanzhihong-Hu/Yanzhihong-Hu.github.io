@@ -1,5 +1,7 @@
 {% include base_path %}
-<script src="{{ base_path }}/assets/js/site.js" defer></script>
+{% assign asset_version = site.time | date: '%s' %}
+{% assign asset_version = site.github.build_revision | default: asset_version %}
+<script src="{{ base_path }}/assets/js/site.js?v={{ asset_version }}" defer></script>
 {% if page.mathjax %}
   <script>
     window.MathJax = {

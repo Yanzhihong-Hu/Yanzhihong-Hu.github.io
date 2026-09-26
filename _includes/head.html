@@ -4,5 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="HandheldFriendly" content="True">
 <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
-<link rel="stylesheet" href="{{ base_path }}/assets/css/main.css">
+{% assign asset_version = site.time | date: '%s' %}
+{% assign asset_version = site.github.build_revision | default: asset_version %}
+<link rel="stylesheet" href="{{ base_path }}/assets/css/main.css?v={{ asset_version }}">
 <link href="{{ site.atom_feed.path | default: '/feed.xml' | prepend: base_path }}" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
