@@ -1,15 +1,15 @@
 ---
 layout: page
 permalink: /research/
-title: "Research"
+title: "Research Interests"
 eyebrow: "Questions · 02"
-intro: "My present interests are probability, random geometry, and mathematical physics. I list them as directions of study, not as claims of completed results."
-description: "Research interests and earlier mathematical work of Yanzhihong Hu."
+intro: "My research interests lie broadly in machine learning, with a current focus on LLM reasoning, agentic AI, and multi-agent systems. I am currently exploring how reasoning, tool use, and collaboration among AI agents can help allocate limited computational resources to improve efficiency and reliability."
+description: "Yanzhihong Hu’s research interests: machine learning, LLM reasoning, agentic AI, and multi-agent systems."
 ---
 <section class="research-status reveal" aria-labelledby="current-direction-title">
   <div class="section-heading-row">
-    <h2 id="current-direction-title">Current direction</h2>
-    <p>Areas that presently organize my graduate study and reading.</p>
+    <h2 id="current-direction-title">{{ site.data.profile.research.current | map: 'title' | join: ' · ' }}</h2>
+    <p>Directions I am currently exploring.</p>
   </div>
   <div class="research-status__grid">
     {% for item in site.data.profile.research.current %}

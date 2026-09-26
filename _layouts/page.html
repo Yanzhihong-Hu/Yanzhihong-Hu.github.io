@@ -5,7 +5,11 @@ layout: default
   <header class="page-intro container reveal">
     {% if page.eyebrow %}<p class="eyebrow">{{ page.eyebrow }}</p>{% endif %}
     <h1>{{ page.title }}</h1>
-    {% if page.intro %}<p class="page-intro__lede">{{ page.intro }}</p>{% endif %}
+    {% if page.profile_intro %}
+      <p class="page-intro__lede">{{ site.data.profile.biography }}</p>
+    {% elsif page.intro %}
+      <p class="page-intro__lede">{{ page.intro }}</p>
+    {% endif %}
   </header>
   <div class="page-content container">
     {{ content }}

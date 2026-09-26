@@ -6,7 +6,7 @@ redirect_from:
   - /resume
 eyebrow: "Record · 06"
 intro: "A current web record of education, research interests, teaching, and earlier mathematical work."
-description: "Curriculum vitae of Yanzhihong Hu."
+description: "Curriculum vitae of Yanzhihong Hu, a Mathematics Ph.D. student at Georgia Tech interested in machine learning, LLM reasoning, agentic AI, and multi-agent systems."
 ---
 <section class="cv-panel reveal" aria-labelledby="cv-file-title">
   <div>

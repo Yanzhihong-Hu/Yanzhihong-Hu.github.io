@@ -1,3 +1,5 @@
+biography: "I am a Ph.D. student in Mathematics at the Georgia Institute of Technology. My research interests lie broadly in machine learning, with a current focus on LLM reasoning, agentic AI, and multi-agent systems. I am particularly interested in how AI agents can reason, use tools, and collaborate efficiently and reliably under limited computational resources. I received my B.S. in Mathematics from the University of Illinois Urbana-Champaign."
+
 education:
   - degree: "Ph.D. in Mathematics"
     institution: "Georgia Institute of Technology"
@@ -10,15 +12,18 @@ education:
 
 research:
   current:
-    - title: "Probability"
+    - title: "Machine Learning"
       note: "Research interest"
-      description: "The central language and foundation of my current mathematical study."
-    - title: "Random geometry"
-      note: "Research interest"
-      description: "A developing interest in geometric objects and phenomena shaped by randomness."
-    - title: "Mathematical physics"
-      note: "Research interest"
-      description: "A developing area of interest in my current mathematical study."
+      description: "My research interests lie broadly in machine learning, with a current focus on reasoning and AI agents."
+    - title: "LLM Reasoning"
+      note: "Currently exploring"
+      description: "I am interested in how large language models reason and how computational resources can be allocated to support efficient, reliable reasoning."
+    - title: "Agentic AI"
+      note: "Currently exploring"
+      description: "I am interested in LLM-based agents that reason and use tools efficiently and reliably under limited computational resources."
+    - title: "Multi-Agent Systems"
+      note: "Currently exploring"
+      description: "I am currently exploring how collaboration among AI agents can improve efficiency, reliability, and the allocation of computational resources."
 
 previous_mathematics:
   - title: "4-Manifolds and Kirby Calculus"

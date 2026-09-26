@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="256" viewBox="0 0 320 256" shape-rendering="crispEdges">
+  <!-- Original, deliberately sparse paving seams and tiny grass clusters. -->
+  <g fill="#fff">
+    <path d="M0 0h320v2H0zM0 128h320v2H0zM158 0h2v42h-2zM158 94h2v34h-2zM0 128h2v40H0zM0 224h2v32H0z" opacity=".45"/>
+    <path d="M46 66h4v4h4v-8h4v12H46zM266 196h4v-8h4v12h-8zM282 192h4v8h-4z"/>
+    <path d="M224 32h8v2h-8zM92 212h6v2h-6z" opacity=".6"/>
+  </g>
+</svg>

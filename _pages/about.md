@@ -3,14 +3,14 @@ layout: page
 permalink: /about/
 title: "About"
 eyebrow: "Profile · 01"
-intro: "I am a Mathematics Ph.D. student at the Georgia Institute of Technology, interested in probability, random geometry, and mathematical physics."
-description: "About Yanzhihong Hu, a Mathematics Ph.D. student at Georgia Tech."
+profile_intro: true
+description: "Yanzhihong Hu is a Mathematics Ph.D. student at Georgia Tech interested in machine learning, LLM reasoning, agentic AI, and multi-agent systems."
 ---
 <section class="content-grid reveal">
   <div class="content-grid__label"><p>Overview</p></div>
   <div class="content-grid__main prose-large">
     <p>My mathematical background is in topology, geometric group theory, geometry, and algebra. Earlier projects included work on 4-manifolds and Kirby calculus, knot-theoretic questions, integral affine manifolds, and Poisson structures.</p>
-    <p>My current research interests are probability, random geometry, and mathematical physics. These are directions of study rather than claims of completed research.</p>
+    <p>I am currently exploring how reasoning, tool use, and collaboration among AI agents can help allocate limited computational resources to improve efficiency and reliability.</p>
   </div>
 </section>
 
@@ -38,6 +38,6 @@ description: "About Yanzhihong Hu, a Mathematics Ph.D. student at Georgia Tech."
   <div class="content-grid__main prose-large">
     <h2 id="approach-title">Research interests change; standards of care should not.</h2>
     <p>I distinguish on this site between previous projects, present areas of focus, and subjects I am still learning. That distinction matters: curiosity is not the same as a finished result.</p>
-    <p>My earlier mathematical work remains part of this record, while my present interests are probability, random geometry, and mathematical physics.</p>
+    <p>My earlier mathematical work remains part of this record. I am currently exploring machine learning, LLM reasoning, agentic AI, and multi-agent systems.</p>
   </div>
 </section>
