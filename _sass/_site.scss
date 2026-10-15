@@ -10,7 +10,7 @@ html {
   color: var(--color-ink);
   font-family: var(--font-body);
   font-size: 16px;
-  line-height: 1.65;
+  line-height: var(--leading-body);
   scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -20,7 +20,15 @@ body {
   margin: 0;
   background: var(--color-paper);
   color: var(--color-ink);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   min-width: 20rem;
+}
+
+/* Short pages keep the footer at the bottom of the viewport. */
+body > main {
+  flex: 1 0 auto;
 }
 
 body.nav-open {
@@ -173,7 +181,7 @@ main:focus {
   border: 1px solid var(--color-ink);
   display: inline-flex;
   font-family: var(--font-display);
-  font-size: 0.82rem;
+  font-size: var(--text-small);
   height: 2rem;
   justify-content: center;
   letter-spacing: -0.03em;
@@ -198,7 +206,7 @@ main:focus {
 .site-nav a {
   color: var(--color-ink-soft);
   display: block;
-  font-size: 0.7rem;
+  font-size: var(--text-small);
   letter-spacing: 0.13em;
   padding-block: 0.8rem;
   position: relative;
@@ -241,7 +249,7 @@ main:focus {
 }
 
 .nav-toggle__label {
-  font-size: 0.68rem;
+  font-size: var(--text-small);
   letter-spacing: 0.13em;
   margin-right: 0.7rem;
   text-transform: uppercase;
@@ -281,7 +289,7 @@ main:focus {
 .eyebrow,
 .status-label {
   color: var(--color-accent-dark);
-  font-size: 0.68rem;
+  font-size: var(--text-small);
   font-weight: 600;
   letter-spacing: 0.18em;
   margin-bottom: var(--space-4);
@@ -301,7 +309,7 @@ main:focus {
   background: transparent;
   border: 1px solid var(--color-ink);
   display: inline-flex;
-  font-size: 0.72rem;
+  font-size: var(--text-small);
   justify-content: center;
   letter-spacing: 0.12em;
   min-height: 3rem;
@@ -332,7 +340,7 @@ main:focus {
 
 .text-link {
   display: inline-block;
-  font-size: 0.72rem;
+  font-size: var(--text-small);
   font-weight: 600;
   letter-spacing: 0.1em;
   padding-bottom: 0.18rem;
@@ -370,7 +378,7 @@ main:focus {
 
 .section-heading-row > p {
   color: var(--color-muted);
-  font-size: 0.9rem;
+  font-size: var(--text-body);
   margin: 0;
   max-width: 28rem;
 }
@@ -421,7 +429,7 @@ main:focus {
 
 .home-hero__statement {
   color: var(--color-ink-soft);
-  font-size: 0.96rem;
+  font-size: var(--text-body);
   line-height: 1.75;
   margin-bottom: var(--space-5);
   max-width: 35rem;
@@ -457,7 +465,7 @@ main:focus {
 
 .home-hero__portrait figcaption {
   color: var(--color-muted);
-  font-size: 0.66rem;
+  font-size: var(--text-small);
   letter-spacing: 0.14em;
   margin-top: var(--space-2);
   text-align: right;
@@ -468,7 +476,7 @@ main:focus {
   bottom: var(--space-5);
   color: var(--color-muted);
   font-family: var(--font-display);
-  font-size: 0.78rem;
+  font-size: var(--text-small);
   left: var(--gutter);
   margin: 0;
   position: absolute;
@@ -492,7 +500,7 @@ main:focus {
 .section-label span,
 .section-label p {
   color: var(--color-muted);
-  font-size: 0.66rem;
+  font-size: var(--text-small);
   letter-spacing: 0.14em;
   margin: 0;
   text-transform: uppercase;
@@ -509,10 +517,9 @@ main:focus {
 }
 
 .home-research-note {
-  color: var(--color-muted);
-  font-family: var(--font-display);
-  font-size: clamp(1.2rem, 2vw, 1.55rem);
-  line-height: 1.55;
+  color: var(--color-ink-soft);
+  font-size: var(--text-reading);
+  line-height: var(--leading-body);
   margin-bottom: 0;
   max-width: 38rem;
 }
@@ -553,7 +560,7 @@ main:focus {
 .interest-index__number,
 .interest-index li > p {
   color: var(--color-muted);
-  font-size: 0.68rem;
+  font-size: var(--text-small);
   letter-spacing: 0.12em;
   margin: 0;
   text-transform: uppercase;
@@ -591,7 +598,7 @@ main:focus {
 .work-list__meta,
 .work-list__item div > p:last-child {
   color: var(--color-muted);
-  font-size: 0.86rem;
+  font-size: var(--text-body);
   margin-bottom: var(--space-2);
 }
 
@@ -612,7 +619,7 @@ main:focus {
 .teaching-list__term,
 .teaching-list article > p:last-child {
   color: var(--color-muted);
-  font-size: 0.76rem;
+  font-size: var(--text-small);
   letter-spacing: 0.08em;
   margin: 0;
   text-transform: uppercase;
@@ -620,7 +627,7 @@ main:focus {
 
 .teaching-list h3 {
   font-family: var(--font-body);
-  font-size: 0.94rem;
+  font-size: var(--text-body);
   font-weight: 500;
   letter-spacing: 0;
   line-height: 1.5;
@@ -666,7 +673,7 @@ main:focus {
 
 .home-life-preview__caption > span:first-child {
   color: var(--color-muted);
-  font-size: 0.67rem;
+  font-size: var(--text-small);
   grid-column: 1 / -1;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -732,7 +739,7 @@ main:focus {
 
 .home-contact__links a {
   color: var(--color-paper);
-  font-size: 0.8rem;
+  font-size: var(--text-small);
   overflow-wrap: anywhere;
   text-underline-offset: 0.35em;
 }
@@ -757,9 +764,8 @@ main:focus {
 
 .page-intro__lede {
   color: var(--color-ink-soft);
-  font-family: var(--font-display);
-  font-size: clamp(1.35rem, 2.5vw, 2rem);
-  line-height: 1.4;
+  font-size: clamp(var(--text-reading), 1.5vw, 1.25rem);
+  line-height: var(--leading-body);
   margin: var(--space-7) 0 0 auto;
   max-width: 45rem;
 }
@@ -808,7 +814,7 @@ main:focus {
 
 .content-grid__label p {
   color: var(--color-muted);
-  font-size: 0.68rem;
+  font-size: var(--text-small);
   letter-spacing: 0.14em;
   margin: 0;
   text-transform: uppercase;
@@ -822,9 +828,8 @@ main:focus {
 
 .prose-large > p {
   color: var(--color-ink-soft);
-  font-family: var(--font-display);
-  font-size: clamp(1.22rem, 2vw, 1.55rem);
-  line-height: 1.55;
+  font-size: clamp(var(--text-reading), 1.5vw, 1.2rem);
+  line-height: var(--leading-body);
   max-width: 49rem;
 }
 
@@ -842,7 +847,7 @@ main:focus {
 
 .record-list__period {
   color: var(--color-accent-dark);
-  font-size: 0.74rem;
+  font-size: var(--text-small);
   letter-spacing: 0.08em;
   margin: 0;
   text-transform: uppercase;
@@ -904,7 +909,7 @@ main:focus {
 .topic-list span,
 .topic-list p {
   color: var(--color-muted);
-  font-size: 0.68rem;
+  font-size: var(--text-small);
   letter-spacing: 0.1em;
   margin: 0;
   text-transform: uppercase;
@@ -927,7 +932,7 @@ main:focus {
 
 .compact-work-list h3 {
   font-family: var(--font-body);
-  font-size: 0.96rem;
+  font-size: var(--text-body);
   font-weight: 500;
   letter-spacing: 0;
   line-height: 1.5;
@@ -935,7 +940,7 @@ main:focus {
 }
 
 .compact-work-list p {
-  font-size: 0.8rem;
+  font-size: var(--text-small);
   margin: 0;
 }
 
@@ -947,9 +952,8 @@ main:focus {
 }
 
 .editorial-note > p:not(.eyebrow) {
-  font-family: var(--font-display);
-  font-size: clamp(1.35rem, 2.5vw, 1.85rem);
-  line-height: 1.5;
+  font-size: var(--text-reading);
+  line-height: var(--leading-body);
 }
 
 .teaching-catalogue {
@@ -966,7 +970,7 @@ main:focus {
 
 .teaching-catalogue__term {
   color: var(--color-accent-dark);
-  font-size: 0.72rem;
+  font-size: var(--text-small);
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -1008,7 +1012,7 @@ main:focus {
 
 .project-catalogue__context {
   color: var(--color-muted);
-  font-size: 0.8rem;
+  font-size: var(--text-small);
   letter-spacing: 0.02em;
 }
 
@@ -1071,7 +1075,7 @@ main:focus {
 
 .contact-ledger dt {
   color: var(--color-muted);
-  font-size: 0.68rem;
+  font-size: var(--text-small);
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -1111,7 +1115,7 @@ main:focus {
 .publication-entry__authors,
 .publication-entry__venue {
   color: var(--color-muted);
-  font-size: 0.88rem;
+  font-size: var(--text-body);
   margin-bottom: var(--space-1);
 }
 
@@ -1122,7 +1126,7 @@ main:focus {
 }
 
 .publication-entry__links a {
-  font-size: 0.7rem;
+  font-size: var(--text-small);
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -1146,7 +1150,7 @@ main:focus {
 .entry-meta,
 .text-link-row {
   color: var(--color-muted);
-  font-size: 0.78rem;
+  font-size: var(--text-small);
 }
 
 .page-content table {
@@ -1256,7 +1260,7 @@ mjx-container {
   background: var(--color-paper);
   bottom: var(--space-3);
   display: flex;
-  font-size: 0.64rem;
+  font-size: var(--text-small);
   height: 3rem;
   justify-content: center;
   letter-spacing: 0.12em;
@@ -1291,7 +1295,7 @@ mjx-container {
 
 .gallery-item figcaption span {
   color: var(--color-accent-dark);
-  font-size: 0.64rem;
+  font-size: var(--text-small);
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -1370,12 +1374,12 @@ mjx-container {
 .music-ledger__identity p,
 .music-ledger__note {
   color: var(--color-muted);
-  font-size: 0.82rem;
+  font-size: var(--text-small);
   margin: 0;
 }
 
 .music-ledger__listen {
-  font-size: 0.67rem;
+  font-size: var(--text-small);
   letter-spacing: 0.11em;
   text-transform: uppercase;
 }
@@ -1435,7 +1439,7 @@ body.dialog-open {
   border: 0;
   color: var(--color-paper);
   cursor: pointer;
-  font-size: 0.68rem;
+  font-size: var(--text-small);
   letter-spacing: 0.12em;
   padding: var(--space-2);
   position: fixed;
@@ -1474,7 +1478,7 @@ body.dialog-open {
 
 .gallery-lightbox figcaption span {
   color: var(--color-accent-soft);
-  font-size: 0.64rem;
+  font-size: var(--text-small);
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -1505,7 +1509,7 @@ body.dialog-open {
 
 .site-footer p {
   color: var(--color-muted);
-  font-size: 0.72rem;
+  font-size: var(--text-small);
   margin-bottom: var(--space-1);
 }
 
@@ -1521,7 +1525,7 @@ body.dialog-open {
 }
 
 .site-footer__links a {
-  font-size: 0.68rem;
+  font-size: var(--text-small);
   letter-spacing: 0.11em;
   text-decoration: none;
   text-transform: uppercase;

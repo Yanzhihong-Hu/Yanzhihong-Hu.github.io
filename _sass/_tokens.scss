@@ -1,4 +1,5 @@
 :root {
+  /* Night-town palette: blue-gray roads, charcoal dialogue panels, cream text. */
   --color-paper: #303c49;
   --color-paper-deep: #283439;
   --color-ink: #f2eddc;
@@ -10,18 +11,36 @@
   --color-accent-dark: #f4d894;
   --color-accent-soft: #d4c692;
   --color-light: #1f2a2d;
-  --font-pixel: "Pixelify Sans", "SFMono-Regular", Consolas, "PingFang SC", "Microsoft YaHei", monospace;
   --color-panel: #293334;
+  --color-panel-raised: #313d3d;
   --color-frame: #c8cbb6;
-  --shadow-frame: 0 -4px 0 var(--color-frame), 0 4px 0 var(--color-frame), -4px 0 0 var(--color-frame), 4px 0 0 var(--color-frame), 8px 8px 0 var(--color-light);
   --color-sky: #354854;
-  --color-pixel-texture: #78878a;
-  --pixel-texture-opacity: 0.24;
   --color-green: #a2bd7e;
+  --color-green-deep: #5d7a52;
+  --color-stone: #66746f;
+  --color-brick: #b4654c;
+
+  /* Pixel geometry: one logical pixel is 4 CSS pixels at full size. */
+  --px: 4px;
+  --px-sm: 2px;
   --shadow-pixel: 4px 4px 0 #1a242a;
+  /* Paving-edge separator: two offset rows of stones, like the curb in the scene. */
+  --pixel-rule: repeating-linear-gradient(90deg, var(--color-line) 0 12px, transparent 12px 16px) 0 0 / 100% 4px no-repeat,
+    repeating-linear-gradient(90deg, transparent 0 4px, var(--color-stone) 4px 6px, transparent 6px 16px) 0 4px / 100% 2px no-repeat;
+  /* Lighter dashed divider for rows inside a section. */
+  --pixel-dash: repeating-linear-gradient(90deg, var(--color-line) 0 8px, transparent 8px 12px);
+
+  /* Type: pixel lettering for names, headings and controls; system fonts for reading. */
+  --font-pixel: "Pixelify Sans", "SFMono-Regular", Consolas, "PingFang SC", "Microsoft YaHei", monospace;
   --font-display: "Pixelify Sans", "PingFang SC", "Microsoft YaHei", sans-serif;
   --font-body: "Avenir Next", Avenir, "Helvetica Neue", Helvetica, "Segoe UI", Arial, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
   --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --text-body: 1rem;
+  --text-reading: 1.0625rem;
+  --text-small: 0.875rem;
+  --text-label: 0.9375rem;
+  --leading-body: 1.7;
+
   --container: 1180px;
   --container-wide: 1380px;
   --gutter: clamp(1.25rem, 4vw, 4.5rem);
@@ -38,4 +57,11 @@
   --duration-fast: 180ms;
   --duration: 420ms;
   --header-height: 5.25rem;
+}
+
+/* Frame shadows resolve on each element, so a component can recolor its frame
+   by setting --color-frame (e.g. the gold primary button). */
+*, *::before, *::after {
+  --shadow-frame: 0 calc(var(--px) * -1) 0 var(--color-frame), 0 var(--px) 0 var(--color-frame), calc(var(--px) * -1) 0 0 var(--color-frame), var(--px) 0 0 var(--color-frame), calc(var(--px) * 2) calc(var(--px) * 2) 0 var(--color-light);
+  --shadow-frame-sm: 0 calc(var(--px-sm) * -1) 0 var(--color-frame), 0 var(--px-sm) 0 var(--color-frame), calc(var(--px-sm) * -1) 0 0 var(--color-frame), var(--px-sm) 0 0 var(--color-frame), var(--px) var(--px) 0 var(--color-light);
 }

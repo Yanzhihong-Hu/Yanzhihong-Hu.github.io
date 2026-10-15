@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="384" height="320" viewBox="0 0 384 320" shape-rendering="crispEdges">
+  <!-- Original sparse page texture: grass tufts, two small flowers and paving stones on a 4px grid.
+       Colors follow the site tokens (--color-green, --color-green-deep, --color-stone, --color-accent, --color-ink). -->
+  <g opacity=".5">
+    <!-- grass tufts -->
+    <path fill="#5d7a52" d="M40 64h4v-8h4v8h4v-4h4v8H40zM300 228h4v-8h4v8h4v-12h4v16h-16zM196 300h4v-4h4v4h4v4h-12z"/>
+    <path fill="#a2bd7e" d="M44 56h4v-4h-4zM308 216h4v-4h-4zM316 212h4v-4h-4z" opacity=".7"/>
+    <!-- flowers -->
+    <path fill="#f2eddc" d="M232 40h4v4h-4zM228 44h4v4h-4zM236 44h4v4h-4zM232 48h4v4h-4zM92 216h4v4h-4zM88 220h4v4h-4zM96 220h4v4h-4zM92 224h4v4h-4z" opacity=".55"/>
+    <path fill="#e8be69" d="M232 44h4v4h-4zM92 220h4v4h-4z"/>
+    <!-- paving stones -->
+    <path fill="#66746f" d="M140 132h16v8h-16zM160 136h12v8h-12zM348 116h12v8h-12zM16 268h16v8H16z" opacity=".75"/>
+  </g>
+</svg>

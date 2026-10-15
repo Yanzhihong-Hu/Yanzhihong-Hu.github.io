@@ -12,11 +12,11 @@ permalink: /
       <p class="campus-hero__edition" aria-hidden="true">FIELD NOTES / 01</p>
     </div>
     <div class="campus-hero__grid">
-      <div class="campus-hero__copy">
-        <p class="campus-hero__greeting">Hello, I’m</p>
+      <div class="campus-hero__copy dialogue-box">
+        <p class="campus-hero__greeting dialogue-box__tab">Hello, I’m</p>
         <h1 id="home-title">Yanzhihong<br><span>Hu<span class="pixel-period" aria-hidden="true">.</span></span></h1>
         <div class="campus-hero__identity">
-          <img src="{{ base_path }}/images/pixel/yanzhihong-rpg-portrait.webp" alt="Pixel portrait of Yanzhihong Hu, with middle-parted black hair and black-framed glasses" width="1254" height="1254">
+          <img src="{{ base_path }}/images/pixel/yanzhihong-rpg-portrait-64.webp" alt="Pixel portrait of Yanzhihong Hu, with middle-parted black hair and black-framed glasses" width="64" height="64">
           <p class="campus-hero__role">Mathematics Ph.D. Student<br><span>Georgia Institute of Technology</span></p>
         </div>
         <p class="campus-hero__statement">{{ site.data.profile.biography }}</p>
@@ -25,17 +25,26 @@ permalink: /
           <a class="button" href="{{ base_path }}/previous-work/">Previous work <span aria-hidden="true">→</span></a>
           <a class="campus-hero__email" href="mailto:{{ site.data.profile.contact.email }}">Email me <span aria-hidden="true">↗</span></a>
         </div>
+        <span class="dialogue-box__cue" aria-hidden="true"></span>
       </div>
       <figure class="campus-scene">
         <div class="campus-scene__frame">
           <p class="campus-scene__label"><span aria-hidden="true">+</span> GEORGIA TECH / ATLANTA</p>
           <img src="{{ base_path }}/images/pixel/atlanta-campus-rpg.webp" alt="" width="1448" height="1086" fetchpriority="high">
+          <ul class="campus-scene__legend" aria-label="Landmarks in the scene">
+            <li><span class="legend-key legend-key--skyline" aria-hidden="true"></span>Atlanta skyline</li>
+            <li><span class="legend-key legend-key--tower" aria-hidden="true"></span>Tech Tower</li>
+            <li><span class="legend-key legend-key--green" aria-hidden="true"></span>Campus green</li>
+          </ul>
         </div>
-        <figcaption><span><span class="pixel-cross" aria-hidden="true">+</span> Atlanta, Georgia</span><span>An imagined campus neighborhood</span></figcaption>
+        <figcaption>An imagined campus neighborhood · Atlanta, Georgia</figcaption>
       </figure>
     </div>
     <div class="campus-hero__foot">
-      <p>{{ site.data.profile.research.current | map: 'title' | join: ' · ' }}</p>
+      <p class="campus-hero__foot-label" id="hero-interests-label">Interested in</p>
+      <ul class="interest-chips" aria-labelledby="hero-interests-label">
+        {% for item in site.data.profile.research.current %}<li>{{ item.title }}</li>{% endfor %}
+      </ul>
       <a href="#home-research-title">A few things about me <span aria-hidden="true">↓</span></a>
     </div>
   </section>
@@ -43,7 +52,7 @@ permalink: /
   <section class="editorial-section container reveal" aria-labelledby="home-research-title">
     <div class="section-label"><span>01</span><p>Research Interests</p></div>
     <div class="editorial-section__body editorial-section__body--lead">
-      <h2 id="home-research-title">{{ site.data.profile.research.current | map: 'title' | join: ' · ' }}</h2>
+      <h2 id="home-research-title">{% for item in site.data.profile.research.current %}{{ item.title }}{% unless forloop.last %}<span class="title-sep">&nbsp;·</span> {% endunless %}{% endfor %}</h2>
       <p class="home-research-note">I am currently exploring how reasoning, tool use, and collaboration among AI agents can help allocate limited computational resources to improve efficiency and reliability.</p>
       <a class="text-link research-details" href="{{ base_path }}/research/">Explore research interests <span aria-hidden="true">→</span></a>
     </div>

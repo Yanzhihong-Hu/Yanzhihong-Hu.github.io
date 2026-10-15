@@ -8,7 +8,7 @@ description: "Yanzhihong Hu’s research interests: machine learning, LLM reason
 ---
 <section class="research-status reveal" aria-labelledby="current-direction-title">
   <div class="section-heading-row">
-    <h2 id="current-direction-title">{{ site.data.profile.research.current | map: 'title' | join: ' · ' }}</h2>
+    <h2 id="current-direction-title">{% for item in site.data.profile.research.current %}{{ item.title }}{% unless forloop.last %}<span class="title-sep">&nbsp;·</span> {% endunless %}{% endfor %}</h2>
     <p>Directions I am currently exploring.</p>
   </div>
   <div class="research-status__grid">

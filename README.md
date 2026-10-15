@@ -21,6 +21,8 @@ The sample posts, talks, portfolio items, and publication entries inherited from
 
 ## Local development
 
+For a Claude Code continuation, start with [`CLAUDE.md`](CLAUDE.md). The English handoff contains a [design brief](_handoff/DESIGN_BRIEF.md), [visual and functional verification guide](_handoff/VERIFICATION.md), and [ready-to-paste prompt](_handoff/CLAUDE_PROMPT.md). These development instructions are excluded from the published site.
+
 Install dependencies:
 
 ```sh

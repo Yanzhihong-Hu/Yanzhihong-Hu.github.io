@@ -149,6 +149,8 @@ include:
   - _pages
   - files
 exclude:
+  - CLAUDE.md
+  - _handoff
   - "*.sublime-project"
   - "*.sublime-workspace"
   - .asset-cache

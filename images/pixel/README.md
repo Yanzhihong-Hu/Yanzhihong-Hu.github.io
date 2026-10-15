@@ -11,6 +11,14 @@ Created for Yanzhihong Hu's existing Jekyll website on 2026-09-26 with the built
 - Design choices for this site: a coherent imagined Georgia Tech / Atlanta neighborhood, separate readable biography panel, sage portrait background and sparse page texture. The scene mixes a raised town-map view with skyline depth; it is not a copy of the reference map or a geographic reconstruction.
 - Artwork is generated raster illustration, not a CSS filter. Encoding to WebP does not alter the composition. Requested logical grid and color counts below describe the art direction, not measured output counts.
 
+## Interface refinement (2026-10-15)
+
+No new generated illustration was made in this pass; the scene and portrait above remain the artwork.
+
+- `yanzhihong-rpg-portrait-64.webp`: 64 × 64, lossless, about 3.5 KiB. **Derived from** `yanzhihong-rpg-portrait.webp`, not newly drawn: the source sits on a regular 64 × 64 cell grid (≈19.6 px per cell), so each cell's center was sampled (median of the central 40 % of the cell) with Pillow and saved with `cwebp -lossless`. The homepage shows it at 96 px (80 px on phones) with `image-rendering: pixelated`, which keeps cell edges crisp instead of blurring a 1254 px image down. The 1254 px original is preserved unchanged.
+- `neighborhood-sprites.svg`: original code-drawn page texture (384 × 320 tile) on a 4 px grid — three grass tufts, two small flowers and a few paving stones, at half opacity in the site palette (`--color-green`, `--color-green-deep`, `--color-stone`, `--color-accent`, `--color-ink`). Static, decorative, hidden in print. Reading areas keep opaque backgrounds, so no sprite sits under text. It replaces `campus-tiles.svg` as the active texture; that file is preserved.
+- Interface details (dialogue-box frames, name-plate tab, menu cursor, continue arrow, map legend keys, paving-stone separators) are CSS, not images.
+
 ## Earlier assets (preserved)
 
 - `atlanta-tech-dusk.webp`: 1536 × 1024; approximately 333 KiB. Original generated pixel illustration, compressed to WebP. Atlanta skyline, Georgia Tech Tech Tower, trees, a campus path and warm lamplight. This is an imagined composition, **not a reconstruction of an actual geographic viewpoint**.
