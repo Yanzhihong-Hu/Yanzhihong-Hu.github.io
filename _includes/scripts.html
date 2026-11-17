@@ -2,6 +2,7 @@
 {% assign asset_version = site.time | date: '%s' %}
 {% assign asset_version = site.github.build_revision | default: asset_version %}
 <script src="{{ base_path }}/assets/js/site.js?v={{ asset_version }}" defer></script>
+{% if page.layout == 'home' %}<script src="{{ base_path }}/assets/js/bricks.js?v={{ asset_version }}" defer></script>{% endif %}
 {% if page.mathjax %}
   <script>
     window.MathJax = {

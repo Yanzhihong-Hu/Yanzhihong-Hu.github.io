@@ -30,14 +30,19 @@ permalink: /
       <figure class="campus-scene">
         <div class="campus-scene__frame">
           <p class="campus-scene__label"><span aria-hidden="true">+</span> GEORGIA TECH / ATLANTA</p>
-          <img src="{{ base_path }}/images/pixel/atlanta-campus-rpg.webp" alt="" width="1448" height="1086" fetchpriority="high">
+          <div class="campus-scene__map" data-scene-map>
+            <img src="{{ base_path }}/images/pixel/atlanta-campus-rpg.webp" alt="" width="1448" height="1086" fetchpriority="high">
+            <span class="map-pin map-pin--skyline" data-pin="skyline" style="--x: 20%; --y: 17%;" aria-hidden="true"><span class="map-pin__tag">Atlanta skyline</span></span>
+            <span class="map-pin map-pin--tower" data-pin="tower" style="--x: 68%; --y: 29%;" aria-hidden="true"><span class="map-pin__tag">Tech Tower</span></span>
+            <span class="map-pin map-pin--green" data-pin="green" style="--x: 43%; --y: 61%;" aria-hidden="true"><span class="map-pin__tag">Campus green</span></span>
+          </div>
           <ul class="campus-scene__legend" aria-label="Landmarks in the scene">
-            <li><span class="legend-key legend-key--skyline" aria-hidden="true"></span>Atlanta skyline</li>
-            <li><span class="legend-key legend-key--tower" aria-hidden="true"></span>Tech Tower</li>
-            <li><span class="legend-key legend-key--green" aria-hidden="true"></span>Campus green</li>
+            <li><button type="button" class="legend-toggle" data-pin-target="skyline" aria-pressed="false"><span class="legend-key legend-key--skyline" aria-hidden="true"></span>Atlanta skyline</button></li>
+            <li><button type="button" class="legend-toggle" data-pin-target="tower" aria-pressed="false"><span class="legend-key legend-key--tower" aria-hidden="true"></span>Tech Tower</button></li>
+            <li><button type="button" class="legend-toggle" data-pin-target="green" aria-pressed="false"><span class="legend-key legend-key--green" aria-hidden="true"></span>Campus green</button></li>
           </ul>
         </div>
-        <figcaption>An imagined campus neighborhood · Atlanta, Georgia</figcaption>
+        <figcaption>An imagined campus neighborhood · Atlanta, Georgia<span class="campus-scene__hint" aria-hidden="true"> · tap a landmark to pin it</span></figcaption>
       </figure>
     </div>
     <div class="campus-hero__foot">
@@ -46,6 +51,32 @@ permalink: /
         {% for item in site.data.profile.research.current %}<li>{{ item.title }}</li>{% endfor %}
       </ul>
       <a href="#home-research-title">A few things about me <span aria-hidden="true">↓</span></a>
+    </div>
+  </section>
+
+  {% comment %} Interactive brick box: hidden until site.js builds it, so it never appears empty without JavaScript. {% endcomment %}
+  <section class="stud-tray container-wide" aria-labelledby="stud-tray-title" data-stud-tray hidden>
+    <div class="stud-tray__head">
+      <h2 id="stud-tray-title" class="stud-tray__title"><span class="stud-icon" aria-hidden="true"></span>A box of round bricks</h2>
+      <p class="stud-tray__hint">Drag and throw the bricks, tap one to read it, or tap empty space to add another.</p>
+    </div>
+    <div class="stud-tray__frame dialogue-box">
+      <div class="stud-tray__stage" data-stud-stage>
+        <canvas aria-hidden="true"></canvas>
+        <div class="stud-tray__labels" data-stud-labels aria-hidden="true"></div>
+      </div>
+      <div class="stud-tray__bar">
+        <ul class="stud-tray__keys" aria-label="Research interests">
+          {% for item in site.data.profile.research.current %}
+            <li><button type="button" class="stud-key" data-stud-key="{{ forloop.index0 }}" data-title="{{ item.title | escape }}" data-note="{{ item.note | escape }}" data-description="{{ item.description | escape }}" aria-pressed="false"><span class="stud-key__dot" aria-hidden="true"></span>{{ item.title }}</button></li>
+          {% endfor %}
+        </ul>
+        <div class="stud-tray__actions">
+          <button type="button" class="stud-action" data-stud-shake>Shake <span aria-hidden="true">~</span></button>
+          <button type="button" class="stud-action" data-stud-reset>Tidy up <span aria-hidden="true">↺</span></button>
+        </div>
+      </div>
+      <p class="stud-tray__readout" data-stud-readout aria-live="polite">Pick a brick to read about one of my interests.</p>
     </div>
   </section>
 
@@ -142,6 +173,36 @@ permalink: /
         </a>
       {% endif %}
       <a class="text-link" href="{{ '/life/' | relative_url }}">Gallery and music <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
+  <section class="editorial-section container reveal build-plate-section" aria-labelledby="home-plate-title" data-build-plate hidden>
+    <div class="section-label"><span>06</span><p>Build plate</p></div>
+    <div class="editorial-section__body">
+      <div class="section-heading-row">
+        <h2 id="home-plate-title">A small baseplate to play with</h2>
+        <p>Round tiles, one pixel each. Pick a colour, then tap or drag. Your build stays in this browser.</p>
+      </div>
+      <div class="build-plate dialogue-box">
+        <div class="build-plate__palette" role="group" aria-label="Tile colour">
+          <button type="button" class="swatch" data-swatch="gold" aria-pressed="true"><span class="swatch__dot" aria-hidden="true"></span>Gold</button>
+          <button type="button" class="swatch" data-swatch="sage" aria-pressed="false"><span class="swatch__dot" aria-hidden="true"></span>Sage</button>
+          <button type="button" class="swatch" data-swatch="brick" aria-pressed="false"><span class="swatch__dot" aria-hidden="true"></span>Brick</button>
+          <button type="button" class="swatch" data-swatch="sky" aria-pressed="false"><span class="swatch__dot" aria-hidden="true"></span>Sky</button>
+          <button type="button" class="swatch" data-swatch="cream" aria-pressed="false"><span class="swatch__dot" aria-hidden="true"></span>Cream</button>
+          <button type="button" class="swatch swatch--eraser" data-swatch="erase" aria-pressed="false"><span class="swatch__dot" aria-hidden="true"></span>Eraser</button>
+        </div>
+        <div class="build-plate__board">
+          <canvas tabindex="0" role="application" aria-roledescription="drawing board" aria-label="Build plate, 16 columns by 10 rows. Use the arrow keys to move and Space or Enter to place or remove a tile." data-plate-canvas></canvas>
+        </div>
+        <div class="build-plate__foot">
+          <p class="build-plate__status" data-plate-status aria-live="polite"></p>
+          <div class="build-plate__actions">
+            <button type="button" class="stud-action" data-plate-reset>Start over <span aria-hidden="true">↺</span></button>
+            <button type="button" class="stud-action" data-plate-clear>Clear</button>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 

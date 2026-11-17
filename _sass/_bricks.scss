@@ -1,0 +1,308 @@
+/* Round 1x1 bricks: the homepage's playful layer on top of the pixel campus.
+   Small markers become studs; the brick box, landmark pins and build plate are interactive. */
+
+$stud-outline: #1a242a;
+$stud-cream: #fffaec;
+
+/* A round brick seen from above: outlined disk, shaded rim, raised stud with a highlight. */
+@mixin stud($c, $size: 12px) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 40% 36%, mix($stud-cream, $c, 60%) 0 11%, transparent 13%),
+    radial-gradient(circle at 50% 45%, mix($stud-cream, $c, 22%) 0 30%, mix($stud-outline, $c, 34%) 32% 38%, transparent 40%),
+    $c;
+  box-shadow: inset -2px -2px 0 mix($stud-outline, $c, 30%), 0 0 0 2px $stud-outline, 2px 3px 0 2px $stud-outline;
+}
+
+$gold: #e8be69;
+$sage: #a2bd7e;
+$brick: #b4654c;
+$sky: #7f9fbe;
+$stone: #8a958c;
+$panel-raised: #313d3d;
+
+[data-stud-tray][hidden], [data-build-plate][hidden] { display: none !important; }
+
+/* ---------- Stud markers across the homepage ---------- */
+.pixel-dot { @include stud($sage, 12px); margin-right: 0.85rem; vertical-align: -1px; }
+.interest-chips li::before { @include stud($sage, 12px); margin-right: 0.75rem; }
+.interest-chips li:nth-child(4n + 1)::before { @include stud($gold, 12px); }
+.interest-chips li:nth-child(4n + 2)::before { @include stud($sage, 12px); }
+.interest-chips li:nth-child(4n + 3)::before { @include stud($brick, 12px); }
+.interest-chips li:nth-child(4n + 4)::before { @include stud($sky, 12px); }
+.legend-key { margin-right: 0.6rem; }
+.legend-key--skyline { @include stud($gold, 12px); }
+.legend-key--tower { @include stud($brick, 12px); }
+.legend-key--green { @include stud($sage, 12px); }
+.record-list__item::before { @include stud($gold, 14px); left: -1px; }
+.record-list__item + .record-list__item::before { @include stud($stone, 14px); }
+
+/* Section numbers as round bricks that pop onto the page when the section scrolls in. */
+.section-label span {
+  display: inline-grid;
+  place-items: center;
+  width: 3rem;
+  min-width: 3rem;
+  height: 3rem;
+  padding: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 46%, $panel-raised 0 54%, #3f4b4a 56% 62%, $panel-raised 64%);
+  box-shadow: inset -3px -3px 0 #232d2f, 0 0 0 2px $stud-outline, 0 0 0 4px var(--color-frame), 3px 5px 0 4px $stud-outline;
+  margin: 6px;
+  font-size: 1.05rem;
+}
+.js .reveal.is-visible .section-label span { animation: stud-pop 560ms var(--ease-out) both; }
+@keyframes stud-pop {
+  0% { transform: translateY(-18px) scale(0.5); opacity: 0; }
+  55% { transform: translateY(0) scale(1.12, 0.9); opacity: 1; }
+  78% { transform: translateY(-3px) scale(0.96, 1.04); }
+  100% { transform: none; }
+}
+
+/* The primary button carries a row of studs, like the top of a brick. */
+.button--primary { position: relative; }
+.button--primary::before {
+  content: "";
+  position: absolute;
+  top: -9px;
+  left: 14px;
+  width: 50px;
+  height: 5px;
+  background:
+    repeating-linear-gradient(90deg, var(--color-accent-dark) 0 10px, transparent 10px 20px) 0 0 / 100% 3px no-repeat,
+    repeating-linear-gradient(90deg, #c99a4a 0 10px, transparent 10px 20px) 0 3px / 100% 2px no-repeat;
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+.button--primary:hover::before { transform: translateY(-2px); }
+
+/* Shared brick-style control: pixel label, framed, lifts on hover and presses down when clicked. */
+.stud-key, .stud-action, .swatch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 44px;
+  margin: var(--px-sm);
+  padding: 0.45rem 0.85rem;
+  border: 0;
+  background: var(--color-panel-raised);
+  box-shadow: var(--shadow-frame-sm);
+  color: var(--color-ink);
+  cursor: pointer;
+  font: 1rem/1.2 var(--font-pixel);
+  letter-spacing: 0.03em;
+  transition: transform var(--duration-fast) var(--ease-out), background-color var(--duration-fast);
+}
+.stud-key:hover, .stud-action:hover, .swatch:hover { transform: translateY(-2px); background: #3a4747; }
+.stud-key:active, .stud-action:active, .swatch:active { transform: translate(2px, 2px); }
+.stud-key[aria-pressed="true"], .swatch[aria-pressed="true"] {
+  background: var(--color-accent);
+  color: var(--color-light);
+  --color-frame: var(--color-accent-dark);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+.stud-action span { color: var(--color-accent); }
+
+.stud-key__dot, .swatch__dot { flex: 0 0 auto; }
+.stud-tray__keys li:nth-child(4n + 1) .stud-key__dot { @include stud($gold, 14px); }
+.stud-tray__keys li:nth-child(4n + 2) .stud-key__dot { @include stud($sage, 14px); }
+.stud-tray__keys li:nth-child(4n + 3) .stud-key__dot { @include stud($brick, 14px); }
+.stud-tray__keys li:nth-child(4n + 4) .stud-key__dot { @include stud($sky, 14px); }
+
+/* ---------- Landmark pins ---------- */
+.campus-scene__map { position: relative; }
+.campus-scene__map img { display: block; }
+.map-pin {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  margin: -15px 0 0 -15px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-12px) scale(0.6);
+  transition: opacity var(--duration-fast), transform var(--duration) var(--ease-out);
+}
+.map-pin--skyline { @include stud($gold, 30px); }
+.map-pin--tower { @include stud($brick, 30px); }
+.map-pin--green { @include stud($sage, 30px); }
+.map-pin.is-peek { opacity: 0.75; transform: none; }
+.map-pin.is-on { opacity: 1; transform: none; pointer-events: auto; cursor: pointer; }
+.map-pin.is-dropping { animation: pin-drop 620ms var(--ease-out) both; }
+/* A soft ring spreads out a few times after a pin lands. */
+.map-pin.is-on::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border: 2px solid var(--color-accent-dark);
+  border-radius: 50%;
+  animation: pin-ring 1.8s ease-out 3;
+  opacity: 0;
+}
+.map-pin__tag {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.25rem 0.55rem;
+  background: var(--color-panel);
+  box-shadow: var(--shadow-frame-sm);
+  color: var(--color-ink);
+  font: 0.875rem/1.2 var(--font-pixel);
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+@keyframes pin-drop {
+  0% { transform: translateY(-48px) scale(0.9); opacity: 0; }
+  50% { transform: translateY(0) scale(1.14, 0.84); opacity: 1; }
+  72% { transform: translateY(-8px) scale(0.95, 1.05); }
+  88% { transform: translateY(0) scale(1.03, 0.97); }
+  100% { transform: none; opacity: 1; }
+}
+@keyframes pin-ring {
+  0% { transform: scale(0.8); opacity: 0.9; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+.legend-toggle {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0.15rem 0.4rem 0.15rem 0.2rem;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  letter-spacing: inherit;
+  transition: transform var(--duration-fast) var(--ease-out), color var(--duration-fast);
+}
+.legend-toggle:hover { color: var(--color-accent-dark); transform: translateY(-2px); }
+.legend-toggle[aria-pressed="true"] { color: var(--color-accent-dark); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 5px; }
+.no-js .legend-toggle { cursor: default; }
+.no-js .campus-scene__hint { display: none; }
+
+/* ---------- Brick box ---------- */
+.stud-tray { padding-top: 3rem; }
+.stud-tray__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 2rem;
+  margin-bottom: 1.6rem;
+}
+.stud-tray__title {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin: 0;
+  font: clamp(1.4rem, 2.2vw, 1.85rem)/1.2 var(--font-pixel);
+  letter-spacing: 0.01em;
+}
+.stud-icon { display: inline-block; @include stud($gold, 20px); }
+.stud-tray__hint { margin: 0; color: var(--color-muted); max-width: 34rem; }
+.stud-tray__frame { margin: var(--px); }
+.stud-tray__stage {
+  position: relative;
+  height: clamp(250px, 26vw, 330px);
+  overflow: hidden;
+  cursor: cell;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  /* Dark baseplate with faint studs. */
+  background:
+    radial-gradient(circle at 12px 12px, #34423f 0 4px, #222c2d 4.5px 5.5px, transparent 6px) 0 0 / 24px 24px,
+    #2a3435;
+}
+.stud-tray__stage.is-over-brick { cursor: grab; }
+.stud-tray__stage.is-grabbing { cursor: grabbing; }
+.stud-tray__stage canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+}
+.stud-tray__labels { position: absolute; inset: 0; pointer-events: none; }
+.stud-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: $stud-outline;
+  font: 600 0.9375rem/1.1 var(--font-pixel);
+  letter-spacing: 0.01em;
+  text-align: center;
+  will-change: transform;
+}
+.stud-tray__bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  padding: 1rem 1rem 0.5rem;
+  border-top: var(--px) solid var(--color-light);
+}
+.stud-tray__keys, .stud-tray__actions { display: flex; flex-wrap: wrap; gap: 0.5rem 0.6rem; margin: 0; padding: 0; list-style: none; }
+.stud-tray__readout {
+  min-height: 3.4em;
+  margin: 0;
+  padding: 0.75rem 3rem 1.25rem 1.25rem;
+  color: var(--color-ink-soft);
+  font-size: var(--text-body);
+  line-height: 1.6;
+}
+.stud-tray__readout strong { margin-right: 0.6rem; color: var(--color-accent); font: 1.05rem/1.4 var(--font-pixel); letter-spacing: 0.02em; }
+.stud-tray__note { display: inline-block; margin-right: 0.75rem; color: var(--color-green); font: var(--text-label)/1.4 var(--font-pixel); letter-spacing: 0.03em; }
+
+/* ---------- Build plate ---------- */
+.build-plate { margin: var(--px); padding: clamp(1rem, 2.4vw, 1.75rem); }
+.build-plate__palette { display: flex; flex-wrap: wrap; gap: 0.4rem 0.5rem; }
+.swatch[data-swatch="gold"] .swatch__dot { @include stud($gold, 14px); }
+.swatch[data-swatch="sage"] .swatch__dot { @include stud($sage, 14px); }
+.swatch[data-swatch="brick"] .swatch__dot { @include stud($brick, 14px); }
+.swatch[data-swatch="sky"] .swatch__dot { @include stud($sky, 14px); }
+.swatch[data-swatch="cream"] .swatch__dot { @include stud(#f2eddc, 14px); }
+.swatch--eraser .swatch__dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px dashed currentColor;
+}
+.build-plate__board { display: flex; justify-content: center; margin: 1.5rem 0 1.25rem; }
+.build-plate__board canvas {
+  display: block;
+  max-width: 100%;
+  image-rendering: pixelated;
+  touch-action: none;
+  cursor: crosshair;
+  box-shadow: 0 0 0 var(--px) var(--color-light), 6px 6px 0 var(--px) var(--color-light);
+}
+.build-plate__board canvas:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 8px; }
+.build-plate__foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem 1.5rem; }
+.build-plate__status { min-height: 1.4em; margin: 0; color: var(--color-muted); font: var(--text-label)/1.4 var(--font-pixel); letter-spacing: 0.03em; }
+.build-plate__actions { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+@media (max-width: 760px) {
+  .stud-tray { padding-top: 2.5rem; }
+  .stud-tray__stage { height: 270px; }
+  .stud-tray__bar { padding-inline: 0.75rem; }
+  .stud-key, .stud-action, .swatch { font-size: 0.875rem; padding-inline: 0.6rem; gap: 0.45rem; min-height: 40px; }
+  .stud-tray__keys, .stud-tray__actions, .build-plate__palette { gap: 0.35rem 0.4rem; }
+  .stud-tray__readout { padding: 0.75rem 1rem 1.25rem; }
+  .map-pin { margin: -12px 0 0 -12px; width: 24px; height: 24px; }
+  .map-pin__tag { font-size: 0.8125rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stud-key:hover, .stud-action:hover, .swatch:hover, .legend-toggle:hover, .stud-key:active, .stud-action:active, .swatch:active { transform: none; }
+  .map-pin.is-on::after { display: none; }
+}
+
+@media print {
+  .stud-tray, .build-plate-section, .map-pin { display: none !important; }
+}
